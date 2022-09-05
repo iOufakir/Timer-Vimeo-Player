@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="countdown.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div>
+            <label for="uname">Choose a time to display the Bonus </label>
+            <input type="text" id="timeInput" name="time" placeholder="Time in minutes">
+        </div>
+
+        <iframe src="http://player.vimeo.com/video/455165769" width="380" height="300" frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+        <div id="bonus" class="bonus">
+            Congratulations 🎉🎉🎉🎉🎉🎉🎉
+            <p>Access the BONUS</p>
+        </div>
+
+        <div id="countdown" class="countdown no-select">
+            <ul>
+                <li id="list-item-hours">
+                    <div class="countdown-block">
+                        <span class="countdown-value" id="hours">00</span>
+                        <span class="countdown-label">Heures</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="countdown-block">
+                        <span class="countdown-value" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+
+                <li>
+                    <div class="countdown-block">
+                        <span class="countdown-value" id="seconds">00</span>
+                        <span class="countdown-label">Secondes</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://player.vimeo.com/api/player.js"></script>
+    <script type="text/javascript" src="countdown.js"></script>
+</body>
+
+</html>
