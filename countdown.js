@@ -6,10 +6,12 @@ const timeToShowBonusInput = document.querySelector("#timeInput");
 const bonusElement = document.querySelector("#bonus");
 const countdown = document.querySelector("#countdown");
 
+const timeToShowBonusInMinutes = 34;
+
 let warningDone = false;
 let videoPlayerInterval = "";
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", () => {
   if (videoPlayerInterval) {
     clearInterval(videoPlayerInterval);
   }
@@ -32,7 +34,7 @@ function trackVimeoPlayer(vimeoPlayer) {
   vimeoPlayer.on("timeupdate", function (getAll) {
     const currentPos = getAll.seconds; //get current time
     const videoEndTime = getAll.duration; //get video duration
-    const timeToShowBonusInSeconds = timeToShowBonusInput.value * 60;
+    const timeToShowBonusInSeconds = timeToShowBonusInMinutes * 60;
     const timeLeft = timeToShowBonusInSeconds - currentPos;
 
     if (!warningDone && currentPos < timeToShowBonusInSeconds) {
