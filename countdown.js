@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (videoPlayerInterval) {
     clearInterval(videoPlayerInterval);
   }
+
+  if (!bonusElement) {
+    alert("Bonus element NOT found in the PAGE!");
+    return;
+  }
+
   const iframe = document.querySelector("iframe");
   const player = new Vimeo.Player(iframe);
 
@@ -45,12 +51,12 @@ function trackVimeoPlayer(vimeoPlayer) {
         stopVimeoPlayer(vimeoPlayer);
         warningDone = true;
       } else if (timeLeft < 1) {
-        bonusElement.style.display = "block";
         updateTimer(timeLeft);
+        bonusElement.style.display = "block";
         stopVimeoPlayer(vimeoPlayer);
       } else {
-        bonusElement.style.display = "none";
         updateTimer(timeLeft);
+        bonusElement.style.display = "none";
       }
     } else {
       updateTimer(0);
