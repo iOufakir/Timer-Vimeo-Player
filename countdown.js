@@ -3,7 +3,7 @@ const minutesElement = document.querySelector("#minutes");
 const secondsElement = document.querySelector("#seconds");
 const listItemHours = document.querySelector("#list-item-hours");
 const timeToShowBonusInput = document.querySelector("#timeInput");
-const bonusElement = document.querySelector("#bonus");
+const bonusElement = document.querySelector(".bonus");
 const countdown = document.querySelector("#countdown");
 
 const timeToShowBonusInMinutes = 34;
