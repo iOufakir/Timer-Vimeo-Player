@@ -27,6 +27,48 @@ body {
 }
 
 /* COUNTDOWN STYLE */
+
+.video-countdown-block {
+  margin: auto;
+  background-color: #212121;
+  color: #ffffff;
+}
+
+.video-countdown-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.video-countdown-content .text {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+
+.video-countdown-content .icon {
+  margin-bottom: 2rem;
+}
+
+.timer-btn {
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #e73f3f;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+}
+
+.timer-btn:hover {
+  background-color: #f45656;
+}
+
 .bonus {
   display: none;
   font-weight: 600;

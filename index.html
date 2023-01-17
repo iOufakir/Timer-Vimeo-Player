@@ -29,9 +29,30 @@
             <p>Access the BONUS</p>
         </div>
 
-        <div id="countdown" class="countdown no-select">
+        <button id="unlock-video-btn" class="timer-btn">Unlock in
+            <span class="item-hours"><span id="hours">00</span>:</span><span id="minutes">00</span>:<span
+                id="seconds">00</span>
+        </button>
+        
+        <!-- First Style -->
+        <div class="countdown video-countdown-block">
+            <div class="video-countdown-content">
+                <img class="icon" width="34" height="34" src="unlock-icon.svg" alt="Unlock video" />
+                <span class="text">
+                    Watch This Video For <span id="bonus-expected-time"></span> To Unlock Our Full Youtube Scaling Course
+                </span>
+                <button id="unlock-video-btn" class="timer-btn">Unlock in
+                    <span class="item-hours"><span id="hours">00</span>:</span><span id="minutes">00</span>:<span
+                        id="seconds">00</span>
+                </button>
+            </div>
+        </div>
+        <br>
+
+        <!-- Second Style -->
+        <div class="countdown no-select">
             <ul>
-                <li id="list-item-hours">
+                <li class="item-hours">
                     <div class="countdown-block">
                         <span class="countdown-value" id="hours">00</span>
                         <span class="countdown-label">Heures</span>

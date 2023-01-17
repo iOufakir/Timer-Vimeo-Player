@@ -1,14 +1,16 @@
 const hoursElement = document.querySelector("#hours");
 const minutesElement = document.querySelector("#minutes");
 const secondsElement = document.querySelector("#seconds");
-const listItemHours = document.querySelector("#list-item-hours");
+const itemHours = document.querySelector(".item-hours");
 const timeToShowBonusInput = document.querySelector("#timeInput");
 const bonusElement = document.querySelector(".bonus");
-const countdown = document.querySelector("#countdown");
-
+const countdown = document.querySelector(".countdown");
+const bonusExpectedTime = document.querySelector("#bonus-expected-time");
+const unlockBtn = document.querySelector("#unlock-video-btn");
 const timeToShowBonusInMinutes = 34;
 
 let warningDone = false;
+let isBonusDisplayed = false;
 let videoPlayerInterval = "";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -27,9 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
   player.getDuration().then(function (duration) {
     // To minutes
     if (duration / 60 < 60) {
-      listItemHours.style.display = "none";
+      itemHours.style.display = "none";
     }
   });
+
+  unlockBtn.addEventListener("click", function () {
+    player.play();
+  });
+
+  updateTimer(timeToShowBonusInMinutes * 60);
+  displayBonusExpectedTime();
 
   videoPlayerInterval = setInterval(function () {
     trackVimeoPlayer(player);
@@ -50,13 +59,16 @@ function trackVimeoPlayer(vimeoPlayer) {
         );
         stopVimeoPlayer(vimeoPlayer);
         warningDone = true;
-      } else if (timeLeft < 1) {
-        updateTimer(timeLeft);
-        bonusElement.style.display = "block";
-        stopVimeoPlayer(vimeoPlayer);
-      } else {
-        updateTimer(timeLeft);
-        bonusElement.style.display = "none";
+      } else if (!isBonusDisplayed) {
+        if (timeLeft < 1) {
+          isBonusDisplayed = true;
+          bonusElement.style.display = "block";
+          updateTimer(timeLeft);
+          stopVimeoPlayer(vimeoPlayer);
+        } else {
+          updateTimer(timeLeft);
+          bonusElement.style.display = "none";
+        }
       }
     } else {
       updateTimer(0);
@@ -78,6 +90,22 @@ function updateTimer(timeLeft) {
   hoursElement.innerText = Math.floor(timeLeft / 3600)
     .toString()
     .padStart(2, "0");
+}
+
+function displayBonusExpectedTime() {
+  const timeLeft = timeToShowBonusInMinutes * 60;
+
+  const seconds = Math.floor(timeLeft % 60)
+    .toString()
+    .padStart(2, "0");
+  const minutes = Math.floor((timeLeft % 3600) / 60)
+    .toString()
+    .padStart(2, "0");
+  const hours = Math.floor(timeLeft / 3600)
+    .toString()
+    .padStart(2, "0");
+
+  bonusExpectedTime.innerText = `${minutes}:${seconds}`;
 }
 
 function stopVimeoPlayer(vimeoPlayer) {
