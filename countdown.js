@@ -7,6 +7,8 @@ const bonusElement = document.querySelector(".bonus");
 const countdown = document.querySelector(".countdown");
 const bonusExpectedTime = document.querySelector("#bonus-expected-time");
 const unlockBtn = document.querySelector("#unlock-video-btn");
+const countdownBlock = document.querySelector(".countdownCTA");
+
 const timeToShowBonusInMinutes = 34;
 
 let warningDone = false;
@@ -20,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!bonusElement) {
     alert("Bonus element NOT found in the PAGE!");
+    return;
+  }
+
+  if(!countdownBlock){
+    alert("Countdown block NOT found in the PAGE!");
     return;
   }
 
@@ -63,6 +70,8 @@ function trackVimeoPlayer(vimeoPlayer) {
         if (timeLeft < 1) {
           isBonusDisplayed = true;
           bonusElement.style.display = "block";
+          countdownBlock.style.display = "none";
+
           updateTimer(timeLeft);
           stopVimeoPlayer(vimeoPlayer);
         } else {
