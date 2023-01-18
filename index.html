@@ -30,20 +30,54 @@
 
         <!-- Price Calculation -->
         <div class="price-calculation-block">
-            <div class="video-countdown-card">
-                <p class="price-label">Hours lost per week on distractions, context-switching, and manual calendaring work</p>
+            <div class="card calculation-first-content">
+                <p class="price-label">Hours lost per week on distractions, context-switching, and manual calendaring
+                    work</p>
                 <div class="pricing-calc-range">
                     <div class="pricing-calc-hours-big"><span id="range-slider-number">1</span> hours</div>
                     <div class="range-input">
-                        <input type="range" id="pricing-calc-hours" name="pricing-calc-hours" min="1"
-                            max="20" class="pricing-calc-range-slider" style="width:100%;" value="0"/>
-                        </div>
+                        <input type="range" id="pricing-calc-hours" name="pricing-calc-hours" min="1" max="20"
+                            class="pricing-calc-range-slider" style="width:100%;" value="0" />
+                    </div>
                     <div class="pricing-calc-range-labels">
                         <div class="pricing-calc-range-label">1</div>
                         <div class="pricing-calc-range-label">20</div>
                     </div>
                 </div>
+                <p class="price-label">Hours lost per week on distractions, context-switching, and manual calendaring
+                    work</p>
+                <div class="input-container">
+                    <span class="currency-sign">$</span>
+                    <input id="hour-input-field" type="number" maxlength="256" name="Hour-number"
+                        data-name="Hour number" placeholder="Enter a price" required />
+                    <span class="hour-sign">/hr</span>
+                </div>
+            </div>
+            <div class="card calculation-second-content">
+                <p class="item-title">Return on investment per month with Motion</p>
 
+                <hr/>
+                <div class="price-result-summary">
+                    <div class="item-title">How did we get this number?</div>
+                    <div class="pricing-details-item">
+                        <div class="pricing-item-left">Hours lost per month</div>
+                        <div id="total-hours" class="pricing-item-left right">28 hours</div>
+                    </div>
+                    <div class="pricing-details-item">
+                        <div id="motion-value-label" class="pricing-item-left">Value of Motion for saving 28 hours
+                            of your time</div>
+                        <div id="motion-value" class="pricing-item-left right">$28</div>
+                    </div>
+                    <div class="pricing-details-item">
+                        <div class="pricing-item-left">Cost of Motion Pro subscription per month</div>
+                        <div id="motion-pro-cost" class="pricing-item-left right">$19</div>
+                    </div>
+                    <hr/>
+                    <div class="pricing-details-item">
+                        <div class="pricing-item-left bold">Total ROI&nbsp;per month</div>
+                        <div id="total-roi" class="pricing-item-left right">$9</div>
+                    </div>
+                </div>
             </div>
         </div>
         <br>
