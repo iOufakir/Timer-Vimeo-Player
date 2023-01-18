@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  if(!countdownBlock){
+  if (!countdownBlock) {
     alert("Countdown block NOT found in the PAGE!");
     return;
   }
@@ -124,3 +124,13 @@ function stopVimeoPlayer(vimeoPlayer) {
   vimeoPlayer.off("ended");
   clearInterval(videoPlayerInterval);
 }
+
+// For Price Calculations
+document.addEventListener("DOMContentLoaded", () => {
+  const priceCalculationRange = document.querySelector("#pricing-calc-hours");
+  const currentRangeNumber = document.querySelector("#range-slider-number");
+
+  priceCalculationRange.addEventListener("input", function () {
+    currentRangeNumber.textContent = this.value;
+  });
+});

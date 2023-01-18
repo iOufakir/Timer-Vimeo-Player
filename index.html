@@ -13,7 +13,6 @@
 <body>
 
     <div class="container">
-
         <div>
             <label for="uname">Choose a time to display the Bonus </label>
             <input type="text" id="timeInput" name="time" placeholder="Time in minutes">
@@ -29,17 +28,33 @@
             <p>Access the BONUS</p>
         </div>
 
-        <button id="unlock-video-btn" class="timer-btn countdownCTA">Unlock in
-            <span class="item-hours"><span id="hours">00</span>:</span><span id="minutes">00</span>:<span
-                id="seconds">00</span>
-        </button>
-        
+        <!-- Price Calculation -->
+        <div class="price-calculation-block">
+            <div class="video-countdown-card">
+                <p class="price-label">Hours lost per week on distractions, context-switching, and manual calendaring work</p>
+                <div class="pricing-calc-range">
+                    <div class="pricing-calc-hours-big"><span id="range-slider-number">1</span> hours</div>
+                    <div class="range-input">
+                        <input type="range" id="pricing-calc-hours" name="pricing-calc-hours" min="1"
+                            max="20" class="pricing-calc-range-slider" style="width:100%;" value="0"/>
+                        </div>
+                    <div class="pricing-calc-range-labels">
+                        <div class="pricing-calc-range-label">1</div>
+                        <div class="pricing-calc-range-label">20</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+
         <!-- First Style -->
-        <div class="countdown video-countdown-block">
+        <div class="countdown video-countdown-block countdownCTA">
             <div class="video-countdown-content">
                 <img class="icon" width="34" height="34" src="unlock-icon.svg" alt="Unlock video" />
                 <span class="text">
-                    Watch This Video For <span id="bonus-expected-time"></span> To Unlock Our Full Youtube Scaling Course
+                    Watch This Video For <span id="bonus-expected-time"></span> To Unlock Our Full Youtube Scaling
+                    Course
                 </span>
                 <button id="unlock-video-btn" class="timer-btn">Unlock in
                     <span class="item-hours"><span id="hours">00</span>:</span><span id="minutes">00</span>:<span

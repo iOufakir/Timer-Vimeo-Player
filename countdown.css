@@ -144,3 +144,48 @@ h1 {
   font-size: 4rem;
   padding: 0 0.5rem;
 }
+
+/* For Price calculations */
+
+.price-calculation-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pricing-calc-hours-big {
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: start;
+  margin-bottom: 1rem;
+}
+
+.pricing-calc-range-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 2rem;
+  background: black;
+  outline: none;
+}
+
+.range-input{
+  margin-bottom: 0.2rem;
+}
+
+.price-label {
+  margin-bottom: 3rem;
+  color: #6d6d72;
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+
+.pricing-calc-range-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pricing-calc-range-label {
+  color: #979797;
+  font-size: 1rem;
+}
