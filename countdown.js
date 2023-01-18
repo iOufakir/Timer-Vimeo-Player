@@ -93,19 +93,21 @@ function updateTimer(timeLeft) {
 }
 
 function displayBonusExpectedTime() {
-  const timeLeft = timeToShowBonusInMinutes * 60;
+  if (bonusExpectedTime) {
+    const timeLeft = timeToShowBonusInMinutes * 60;
 
-  const seconds = Math.floor(timeLeft % 60)
-    .toString()
-    .padStart(2, "0");
-  const minutes = Math.floor((timeLeft % 3600) / 60)
-    .toString()
-    .padStart(2, "0");
-  const hours = Math.floor(timeLeft / 3600)
-    .toString()
-    .padStart(2, "0");
+    const seconds = Math.floor(timeLeft % 60)
+      .toString()
+      .padStart(2, "0");
+    const minutes = Math.floor((timeLeft % 3600) / 60)
+      .toString()
+      .padStart(2, "0");
+    const hours = Math.floor(timeLeft / 3600)
+      .toString()
+      .padStart(2, "0");
 
-  bonusExpectedTime.innerText = `${minutes}:${seconds}`;
+    bonusExpectedTime.innerText = `${minutes}:${seconds}`;
+  }
 }
 
 function stopVimeoPlayer(vimeoPlayer) {
